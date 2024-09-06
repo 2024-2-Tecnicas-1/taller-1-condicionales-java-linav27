@@ -8,8 +8,17 @@ import java.util.Scanner;
  */
 public class SetDeTenis {
     public static String evaluar(int numVictoriasA, int numVictoriasB) {
-        // TODO: Coloca aquí el código del ejercicio 1: Set de tenis
-        return "";
+        if ((numVictoriasA < 0 || numVictoriasB < 0) || (numVictoriasA > 7 && numVictoriasB <6 ) || (numVictoriasB > 7 && numVictoriasA <6 ) || (numVictoriasA > 7 && numVictoriasB > 7)){
+            return"invalido";
+        }else if (numVictoriasA < 6 && numVictoriasB < 6) {
+            return "Aun no ha terminado";
+        }else if((numVictoriasA - numVictoriasB >= 2) || (numVictoriasB - numVictoriasA >=2)) {
+            return (numVictoriasA > numVictoriasB) ? "Gano A" : "Gano B";  
+        }else if (numVictoriasA == 6 || numVictoriasB == 6) {
+        return (numVictoriasA == 6) ? "Gano A" : "Gano B";
+        }else{
+            return"invalido";
+        }
     }
     
     public static void main(String[] args) {
